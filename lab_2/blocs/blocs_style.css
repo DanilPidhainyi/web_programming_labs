@@ -41,6 +41,7 @@
     left: 25%;
     top: 20%;
     justify-content: center;
+    flex-direction: column;
 }
 
 .bloc__4 {
