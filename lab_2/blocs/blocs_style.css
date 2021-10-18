@@ -1,0 +1,95 @@
+.bloc_main {
+    width: 635px;
+    height: 740px;
+    position: relative;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+}
+
+.bloc {
+    display: flex;
+    align-items: center;
+    border: solid;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.bloc__1 {
+    width: 100%;
+    height: 20%;
+    background: #C6D9F1;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    justify-content: space-between;
+}
+
+.bloc__2 {
+    width: 25%;
+    height: 25%;
+    background: #FDE9D9;
+    left: 0;
+    top: 20%;
+    z-index: 1;
+}
+
+.bloc__3 {
+    width: 50%;
+    height: 50%;
+    left: 25%;
+    top: 20%;
+    justify-content: center;
+}
+
+.bloc__4 {
+    width: 25%;
+    height: 75%;
+    background: #FDE9D9;
+    top: 20%;
+    left: 75%;
+    justify-content: right;
+    z-index: 1;
+}
+
+.bloc__5 {
+    width: 25%;
+    height: 25%;
+    background: #EAF1DD;
+    top: 45%;
+    left: 0;
+
+}
+
+.bloc__6 {
+    width: 75%;
+    height: 25%;
+    background: #C6D9F1;
+    left: 0;
+    bottom: 4.3%;
+    justify-content: space-between;
+}
+
+
+
+.bloc__1__x, .bloc__6__y {
+    width: 200px;
+    height: 50px;
+    background: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.bloc__1__x {
+    justify-content: left;
+    right: 20px;
+}
+
+.bloc__6__y {
+    justify-content: right;
+    left: 20px;
+
+}
