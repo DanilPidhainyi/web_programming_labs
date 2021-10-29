@@ -1,11 +1,16 @@
 
 const get_loc_tex = item => {
-        if (localStorage.getItem(item.toString()) === null) {
-            item.html('Це друга лабораторна')
-        } else {
-            item.html(localStorage.getItem(item.toString()))
-        }
+    if (localStorage.getItem(item.toString()) === null) {
+        item.html('Це друга лабораторна')
+    } else {
+        item.html(localStorage.getItem(item.toString()))
+    }
 
+}
+
+const clean_text = item => {
+    localStorage.removeItem(item.toString())
+    get_loc_tex(item)
 }
 
 
@@ -19,9 +24,21 @@ const save_edit = item => {
     item.html(new_text)
 
     localStorage.setItem(item.toString(), new_text)
+
+    // todo колір на довільний
+    function rand() {
+        return Math.floor(Math.random() * 256);
+    }
+    let parent_item = item.parent(".bloc")[0]
+    parent_item.style.backgroundColor =
+        "rgb(" + rand() + "," + rand() + "," + rand() + ")"
+
+
+    // todo кнопка для очищення локального середовища
+    item.append(
+        "<button onclick='clean_text($(`.bloc__1 h1`))'>Очистити</button>"
+    )
 }
-
-
 
 const edit_text = item => {
     /**
