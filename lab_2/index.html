@@ -7,22 +7,26 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="menu/menu.css">
     <script src="../node_modules/jquery/dist/jquery.js"></script>
-    <script src="main.js"></script>
     <link rel="stylesheet" href="form/form.css">
+    <script src="scripts/task_1_2.js"></script>
+
+    <script src="scripts/task_4.js"></script>
+    <script src="scripts/task_5.js"></script>
 </head>
 <body>
 <div class="bloc_main">
         <div class="bloc bloc__1">
-            <h1>Це завдання першої лабораторної</h1>
+            <h1 ondblclick="edit_text($('.bloc__1 h1'))">Це друга лабораторна</h1>
             <div class="bloc bloc__1__x">
                 <p>Варіант 1</p>
             </div>
         </div>
         <div class="bloc bloc__2">
-            <p>
-                Позначки «X» та «Y» замініть вигаданими назвами чи гаслами з
-            використанням тегів заголовку.
-            </p>
+            <button class="bloc__2__b" onclick="changeColor('#ff1111')">червоний</button>
+            <button class="bloc__2__b" onclick="changeColor('#11ff39')">зелений</button>
+            <button class="bloc__2__b" onclick="changeColor('#0e17c1')">синій</button>
+            <button class="bloc__2__b" onclick="changeColor('#1ec9b5')">блакитний</button>
+            <button class="bloc__2__b" onclick="changeColor('#c1b80e')">жовтий</button>
         </div>
         <div class="bloc bloc__3">
         </div>

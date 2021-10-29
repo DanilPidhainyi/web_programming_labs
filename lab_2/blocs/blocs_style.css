@@ -33,6 +33,8 @@
     left: 0;
     top: 20%;
     z-index: 1;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .bloc__3 {
