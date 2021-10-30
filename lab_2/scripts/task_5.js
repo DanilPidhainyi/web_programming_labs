@@ -1,16 +1,22 @@
 
-const get_loc_tex = item => {
-    if (localStorage.getItem(item.toString()) === null) {
-        item.html('Це друга лабораторна')
+const get_loc_tex = (item) => {
+    let def = {
+        [$('.bloc__1 h1').attr('class')] : 'Це друга лабораторна',
+        [$('.bloc__6 .p2').attr('class')] : 'Підберіть безкоштовний хостінг'
+    }
+
+    if (localStorage.getItem(item.attr('class')) === null) {
+        item.html(def[item.attr('class')])
     } else {
-        item.html(localStorage.getItem(item.toString()))
+        item.html(localStorage.getItem(item.attr('class')))
     }
 
 }
 
 const clean_text = item => {
-    localStorage.removeItem(item.toString())
+    localStorage.removeItem(item.attr('class'))
     get_loc_tex(item)
+    return null
 }
 
 
@@ -23,9 +29,9 @@ const save_edit = item => {
     let new_text = $('#text_edit').val()
     item.html(new_text)
 
-    localStorage.setItem(item.toString(), new_text)
+    localStorage.setItem(item.attr('class'), new_text)
 
-    // todo колір на довільний
+    // колір на довільний
     function rand() {
         return Math.floor(Math.random() * 256);
     }
@@ -34,10 +40,14 @@ const save_edit = item => {
         "rgb(" + rand() + "," + rand() + "," + rand() + ")"
 
 
-    // todo кнопка для очищення локального середовища
-    item.append(
-        "<button onclick='clean_text($(`.bloc__1 h1`))'>Очистити</button>"
-    )
+    // кнопка для очищення локального середовища
+    if (item.html().search('but_clear') === -1) {
+        item.append(
+            "<button id='but_clear'>Очистити</button>"
+        )
+        $('#but_clear').click(() => {clean_text(item)})
+    }
+    return null
 }
 
 const edit_text = item => {
@@ -46,11 +56,12 @@ const edit_text = item => {
      * this function add textarea and button
      * instead of the contents of the block
      * */
-
-    item.html("" +
-        `<textarea id='text_edit'>${item.text()}</textarea>` +
-        "<button onclick='save_edit($(`.bloc__1 h1`))'>змінити</buttonsave_edit>" +
-        "")
+    item.html(
+        `<textarea id='text_edit'>${item.html()}</textarea>` +
+        `<button id='but_change'>змінити</buttonsave_edit>`
+    )
+    //document.getElementById('#but_change').onclick = save_edit(item)
+    $('#but_change').click(() => {save_edit(item)})
 }
 $(() => {
     //5. Напишіть скрипт редагування вмісту (текст і HTML) номерних блоків (1..6):
@@ -67,9 +78,8 @@ $(() => {
     // відповідного номерного блоку без перезавантаження документа.
 
     //ondblclick
-
     get_loc_tex($('.bloc__1 h1'))
-
+    get_loc_tex($('.bloc__6 .p2'))
 })
 
 // todo включить блок 3
