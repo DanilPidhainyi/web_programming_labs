@@ -54,8 +54,8 @@ $(() => {
         if (nums.length === 10) {
             try {
                 res = nums.map(parseFloat)
-                    .sort()
                     .filter(Boolean)
+                    .sort((a, b) => a > b)
                 let MAX = res[res.length - 1]
                 res = res.filter(item => item === MAX)
                     .length
@@ -70,11 +70,12 @@ $(() => {
 
     // work with user
     if (document.cookie.length === 0) {
-        console.log(document.cookie.length)
+        num_of_num()
+    } else if (document.cookie === '-1') {
         num_of_num()
     } else {
         if (confirm(document.cookie + "\n Видалити дані?")) {
-            document.cookie = ''
+            document.cookie = -1
             num_of_num()
         } else {
             if (confirm("Наявні куки перезавантажити сторінку?")) {
