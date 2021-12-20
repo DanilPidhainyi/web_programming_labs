@@ -1,0 +1,19 @@
+ul {
+    padding-right: 20px;
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 5px;
+    font-size: 20px;
+
+}
+
+img {
+    margin-bottom: 10px;
+}
+
+a {
+    color: darkred;
+    text-decoration: none;
+}
