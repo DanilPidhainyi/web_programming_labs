@@ -6,11 +6,15 @@
     <link rel="stylesheet" href="blocs/blocs_style.css">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="menu/menu.css">
+    <link rel="stylesheet" href="accordion/edit-ac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="accordion/save.js"></script>
+
 </head>
 <body>
 <div class="bloc_main">
         <div class="bloc bloc__1">
-            <h1>Це сторінка 2</h1>
+            <h1>Це лабораторна робота 3</h1>
             <div class="bloc bloc__1__x">
                 <p>Варіант 1</p>
             </div>
@@ -22,11 +26,14 @@
             </p>
         </div>
         <div class="bloc bloc__3">
-            <p>
-                Засобами HTML створіть веб-сторінку заданого вигляду згідно з вашим
-                варіантом, використовуючи CSS для позиціювання та візуалізації окремих
-                елементів сторінки.
-            </p>
+            <div class="faq">
+                <div class="faq-ac-it" id="faq-ac-it"></div>
+
+                <div class="faq-add">
+                    <button onclick="add_section()">Додати</button>
+                    <button onclick="save()">Зберегти</button>
+                </div>
+            </div>
         </div>
         <div class="bloc bloc__4">
             <ul>
@@ -64,5 +71,6 @@
             <p>Підберіть безкоштовний хостінг.</p>
         </div>
     </div>
+<script src="accordion/create-edit-ac.js"></script>
 </body>
 </html>
